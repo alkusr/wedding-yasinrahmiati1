@@ -215,12 +215,8 @@
                     secondsLeft = (now.getTime() - targetDate) / 1000;
                     updateDisplayDate();
                 } else {
-                    days = 0;
-                    hours = 0;
-                    minutes = 0;
-                    seconds = 0;
-                    window.clearInterval(interval);
-                    parameters.onEnd();
+                    secondsLeft = (now.getTime() - targetDate) / 1000;
+                    updateDisplayDate();
                 }
 
                 if (parameters.plural) {
