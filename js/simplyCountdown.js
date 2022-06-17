@@ -5,7 +5,7 @@
 
     /*!
      * Project : simply-countdown
-     * Date : 10/07/2022
+     * Date : 27/06/2015
      * License : MIT
      * Version : 1.6.0
      * Author : Vincent Loy <vincent.loy1@gmail.com>
@@ -111,9 +111,9 @@
     exports.simplyCountdown = (elt, args) => {
         const eltProto = Object.getPrototypeOf(elt);
         let parameters = extend({
-            year: 2022,
-            month: 7,
-            day: 10,
+            year: 2015,
+            month: 6,
+            day: 28,
             hours: 9,
             minutes: 0,
             seconds: 0,
@@ -215,8 +215,12 @@
                     secondsLeft = (now.getTime() - targetDate) / 1000;
                     updateDisplayDate();
                 } else {
-                    secondsLeft = (now.getTime() - targetDate) / 1000;
-                    updateDisplayDate();
+                    days = 0;
+                    hours = 0;
+                    minutes = 0;
+                    seconds = 0;
+                    window.clearInterval(interval);
+                    parameters.onEnd();
                 }
 
                 if (parameters.plural) {
